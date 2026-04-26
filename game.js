@@ -213,6 +213,10 @@ function renderFeedback() {
     ch.mode === "name" ? "Which script is this?" : "Where is this from?";
 
   const tipsHtml = ch.correct.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("");
+  const countriesHtml = ch.correct.countries
+    .map((c) => `<span class="country">${c.flag} ${escapeHtml(c.name)}</span>`)
+    .join("");
+  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${ch.correct.mapBbox}&layer=mapnik`;
 
   // Re-render same sample in same font so the player can re-look at exactly what they failed on.
   stage.innerHTML = `
@@ -224,6 +228,9 @@ function renderFeedback() {
       <div>That was <strong>${escapeHtml(ch.correct.name)}</strong> — ${escapeHtml(ch.correct.region)}.</div>
       ${comparisonHtml(ch)}
       <ul>${tipsHtml}</ul>
+      <div class="history"><strong>History:</strong> ${escapeHtml(ch.correct.history)}</div>
+      <div class="regions"><strong>Used in:</strong> ${countriesHtml}</div>
+      <iframe class="map-frame" src="${mapSrc}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of where ${escapeHtml(ch.correct.name)} is used"></iframe>
     </div>
     <div class="actions">
       <button class="btn" id="next-btn">${round.index + 1 < ROUND_SIZE ? "Next" : "See score"}</button>
