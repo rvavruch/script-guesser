@@ -6,6 +6,14 @@ const OPTION_COUNT = 6;
 const WEIGHTS = [300, 400, 700];
 const ITALIC_PROBABILITY = 0.33; // only applies to scripts with latinScript: true
 
+const MODE_SIMPLE = "simple";
+const MODE_CHALLENGING = "challenging";
+// In simple mode each script renders in its first declared font (the most
+// traditional / canonical choice — Noto Sans X for most, Be Vietnam Pro for
+// Vietnamese), at weight 400, no italic. The whole point is consistency:
+// the player learns the basic skeletons of each script before facing wild
+// font variation in challenging mode.
+
 let round = null; // { challenges: [...], index: 0, score: 0 }
 
 const stage = document.getElementById("stage");
@@ -133,15 +141,18 @@ async function renderMap(elementId, ch) {
   _currentMap = map;
 }
 
-function buildRound() {
+function buildRound(difficulty = MODE_CHALLENGING) {
   // 5 distinct scripts.
   const chosen = shuffle(SCRIPTS).slice(0, ROUND_SIZE);
+  const isSimple = difficulty === MODE_SIMPLE;
 
   const challenges = chosen.map((correct) => {
     const sample = pick(correct.samples);
-    const font = pick(correct.fonts);
-    const weight = pick(WEIGHTS);
-    const italic = Boolean(correct.latinScript) && Math.random() < ITALIC_PROBABILITY;
+    const font = isSimple ? correct.fonts[0] : pick(correct.fonts);
+    const weight = isSimple ? 400 : pick(WEIGHTS);
+    const italic = isSimple
+      ? false
+      : Boolean(correct.latinScript) && Math.random() < ITALIC_PROBABILITY;
     const mode = Math.random() < 0.5 ? "name" : "region";
 
     // Distractors: scripts whose displayed label (name or region) differs from correct's,
@@ -194,7 +205,7 @@ function buildRound() {
     };
   });
 
-  return { challenges, index: 0, score: 0 };
+  return { challenges, index: 0, score: 0, difficulty };
 }
 
 function renderStatus() {
@@ -202,8 +213,10 @@ function renderStatus() {
     statusBar.textContent = "";
     return;
   }
+  const modeLabel = round.difficulty === MODE_SIMPLE ? "Simple" : "Challenging";
   statusBar.innerHTML =
     `<span>Challenge ${round.index + 1} of ${ROUND_SIZE}</span>` +
+    `<span>${modeLabel}</span>` +
     `<span>Score: ${round.score}</span>`;
 }
 
@@ -217,12 +230,27 @@ function renderStart() {
     <div class="start">
       <h2>Spot the script.</h2>
       <p>Five challenges per round. Each shows a real word or phrase in one Asian script. Pick which script (or which region) it's from. Built for GeoGuessr practice.</p>
-      <button class="btn" id="start-btn">Start round</button>
+      <div class="mode-buttons">
+        <button class="btn mode-btn" data-mode="${MODE_SIMPLE}">
+          <span class="mode-title">Simple</span>
+          <span class="mode-sub">one traditional font, normal weight</span>
+        </button>
+        <button class="btn mode-btn" data-mode="${MODE_CHALLENGING}">
+          <span class="mode-title">Challenging</span>
+          <span class="mode-sub">random fonts, weights &amp; styles</span>
+        </button>
+      </div>
     </div>
   `;
-  document.getElementById("start-btn").addEventListener("click", () => {
-    round = buildRound();
-    renderChallenge();
+  bindModeButtons();
+}
+
+function bindModeButtons() {
+  document.querySelectorAll(".mode-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      round = buildRound(btn.dataset.mode);
+      renderChallenge();
+    });
   });
 }
 
@@ -362,16 +390,21 @@ function renderSummary() {
       <h2>Round complete</h2>
       <div class="score">${round.score} / ${ROUND_SIZE}</div>
       <ul class="breakdown">${items}</ul>
-      <div class="actions">
-        <button class="btn" id="again-btn">Play again</button>
+      <div class="prompt" style="margin-top: 18px;">Play another round</div>
+      <div class="mode-buttons">
+        <button class="btn mode-btn" data-mode="${MODE_SIMPLE}">
+          <span class="mode-title">Simple</span>
+          <span class="mode-sub">one traditional font</span>
+        </button>
+        <button class="btn mode-btn" data-mode="${MODE_CHALLENGING}">
+          <span class="mode-title">Challenging</span>
+          <span class="mode-sub">random fonts &amp; weights</span>
+        </button>
       </div>
     </div>
   `;
 
-  document.getElementById("again-btn").addEventListener("click", () => {
-    round = buildRound();
-    renderChallenge();
-  });
+  bindModeButtons();
 }
 
 function escapeHtml(s) {
