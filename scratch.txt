@@ -1,0 +1,16 @@
+I want to build a simple guessing game. The game is based off of the CSV that I've attached.
+
+The aim of the game is to teach me to be better at identifying Asian scripts. The hypothesis is that by constantly having to look at real-life examples of the scripts and make a guess, I will learn over time to identify the scripts better. Larger goal of this game is to get better at playing the game Geogesser. So I'm only interested in scripts that would appear in countries that have Google Street View.  
+
+The game will be played in rounds. Each round will consist of 5 challenges. A challenge will consist of a real-life example of an Asian script (such as a poster, a shop window or a street sign), and then six multiple-choice options beneath it. Those multiple-choice options should either be a list of script names or a list of regions. The player then needs to choose one of those multiple options and click a "Guess" button. After clicking the "Guess" button, the game should then tell the player whether they guessed correctly. If the player guessed incorrectly, the game should re-show the picture as well as possible tips (see CSV, but welcome to come up with other tips as well) to help identify the script. Once all five challenges have been guessed the game should then show the player their final score of number of guesses they got correctly versus those they got wrong 
+
+Because the aim of the game is to teach the player to identify scripts, it is crucial that the scripts be correctly identified by the game. This I think is one of the biggest challenges that the game needs to correctly know what script is in the image so it can judge the player's guess correctly. If it's not possible for the game to do this, then instead we should rather just show examples of the script in UTF-8. Maybe then using different fonts that match the script. So that the player can see the script in different contexts. 
+
+
+Notes:
+I recommend using the "Bold" version of these fonts. In the Geoguesser, street signs are often blurry or seen from a distance; practicing with the bold versions helps you recognize the "skeletal shape" of the letters (like the Thai loops or the Khmer wavy caps) even when the resolution is low.
+
+
+
+Andhra Pradesh / Telangana
+
