@@ -141,7 +141,7 @@ const SCRIPTS = [
       "ผมชอบกินก๋วยเตี๋ยวต้มยำกุ้ง",
       "ขอข้าวเหนียวมะม่วงหนึ่งจานครับ"
     ],
-    fonts: ["Noto Sans Thai", "Noto Serif Thai", "Sarabun", "Prompt", "Kanit", "Mali", "IBM Plex Sans Thai"],
+    fonts: ["Sarabun", "Noto Sans Thai", "Noto Serif Thai", "Prompt", "Kanit", "Mali", "IBM Plex Sans Thai"],
     tips: [
       "Tone marks above the line (◌่ ◌้ ◌๊ ◌๋) are almost always present — Thai is heavily tonal and these survive in any Thai font.",
       "Two font styles in real life: looped (Sarabun, traditional — tiny terminal head-loop on every consonant) and loopless (Prompt, Kanit, modern — clean opens). Both appear on Thai signage; the loops disappear in modern fonts.",
@@ -172,7 +172,7 @@ const SCRIPTS = [
       "ຂ້ອຍ ມັກກິນເຂົ້າຂົ້ວ",
       "ພາສາລາວ ງ່າຍສຳລັບຊາວລາວ"
     ],
-    fonts: ["Noto Sans Lao", "Noto Serif Lao", "Noto Sans Lao Looped"],
+    fonts: ["Noto Sans Lao Looped", "Noto Sans Lao", "Noto Serif Lao"],
     tips: [
       "Bubbly/rounded — like a softer, simpler Thai. Notice closed circles INSIDE letters (ມ ບ ດ have round bowls).",
       "Fewer letters than Thai (27 vs 44), so a Lao phrase shows less shape variety.",
