@@ -165,6 +165,7 @@ const SCRIPTS = [
     tips: [
       "The \"Bubbles\": almost entirely interlocking circles and C-shapes. Very few straight lines.",
       "If a script looks like a row of soap bubbles or Cheerios, it's Burmese.",
+      "Big C that looks like it is surrounding another letter.",
       "Real-world tell: rare in GeoGuessr (limited Street View coverage of Myanmar)."
     ]
   },
