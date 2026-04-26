@@ -112,7 +112,7 @@ async function renderMap(elementId, ch) {
   // surrounding regional context — useful for GeoGuessr orientation. Large
   // multi-country spans (Hindi belt + Nepal, Arabic across MENA) need wider
   // views than this anyway, so the cap rarely engages there.
-  const fitOpts = { padding: [12, 12], maxZoom: 4 };
+  const fitOpts = { padding: [12, 12], maxZoom: 3 };
 
   if (features.length > 0) {
     const layer = L.geoJSON(
