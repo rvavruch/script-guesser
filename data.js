@@ -46,7 +46,7 @@ const SCRIPTS = [
       "이번 주말에 부산으로 여행을 갈 거예요",
       "한강에서 자전거를 타면 정말 시원합니다"
     ],
-    fonts: ["Noto Sans KR", "Noto Serif KR", "Nanum Pen Script", "Black Han Sans", "Gaegu", "Hahmlet", "Gowun Dodum"],
+    fonts: ["Noto Serif KR", "Noto Sans KR", "Nanum Pen Script", "Black Han Sans", "Gaegu", "Hahmlet", "Gowun Dodum"],
     tips: [
       "Square syllable blocks with circles (ㅇ) and squares — very geometric and modular.",
       "Each block packs 2–4 jamo (letter parts) into a roughly square shape, like a tiny grid.",
@@ -76,7 +76,7 @@ const SCRIPTS = [
       "美味しい和食を食べに行きましょう",
       "電車は十分後に到着いたします"
     ],
-    fonts: ["Noto Sans JP", "Noto Serif JP", "Sawarabi Mincho", "Yusei Magic", "M PLUS Rounded 1c", "Shippori Mincho", "Klee One"],
+    fonts: ["Noto Serif JP", "Noto Sans JP", "Sawarabi Mincho", "Yusei Magic", "M PLUS Rounded 1c", "Shippori Mincho", "Klee One"],
     tips: [
       "Three scripts at once — Kanji (complex), Hiragana (curly の), Katakana (angular ナ).",
       "If you see all three together, it's Japan. The signature swirly の almost always appears.",
@@ -107,7 +107,7 @@ const SCRIPTS = [
       "請問最近的捷運站怎麼走",
       "故宮博物院收藏了許多珍貴文物"
     ],
-    fonts: ["Noto Sans TC", "Noto Serif TC", "ZCOOL XiaoWei", "Long Cang", "Noto Sans HK", "Ma Shan Zheng"],
+    fonts: ["Noto Serif TC", "Noto Sans TC", "ZCOOL XiaoWei", "Long Cang", "Noto Sans HK", "Ma Shan Zheng"],
     tips: [
       "Dense, uniform Han characters — no circles like Korean, no curly kana like Japanese.",
       "Traditional has many strokes packed in (灣, 龜, 體) compared to Simplified's reduced forms (湾, 龟, 体).",
@@ -202,7 +202,7 @@ const SCRIPTS = [
       "បាយឆា ជាអាហារពេញនិយម",
       "ភាសាខ្មែរ មានអក្សរច្រើន"
     ],
-    fonts: ["Noto Sans Khmer", "Noto Serif Khmer", "Battambang", "Moul", "Hanuman", "Koulen", "Bayon"],
+    fonts: ["Hanuman", "Noto Serif Khmer", "Noto Sans Khmer", "Battambang", "Moul", "Koulen", "Bayon"],
     tips: [
       "Wavy crowns on top of many letters (ស ដ) — ornate, decorative.",
       "Subscript consonants hang below the baseline — text feels 'busy' both above AND below the line.",
@@ -261,7 +261,7 @@ const SCRIPTS = [
       "मेरा नाम राजेश है, मैं दिल्ली से हूँ",
       "बॉलीवुड फिल्में दुनिया भर में लोकप्रिय हैं"
     ],
-    fonts: ["Noto Sans Devanagari", "Noto Serif Devanagari", "Hind", "Mukta", "Tiro Devanagari Hindi", "Kalam", "Yatra One"],
+    fonts: ["Noto Serif Devanagari", "Noto Sans Devanagari", "Hind", "Mukta", "Tiro Devanagari Hindi", "Kalam", "Yatra One"],
     tips: [
       "Continuous horizontal headstroke (shirorekha) along the top of words — नमस्ते.",
       "Letters hang from the headstroke like clothes on a line. Blocky, upright shapes below.",
@@ -322,7 +322,7 @@ const SCRIPTS = [
       "హైదరాబాద్ బిర్యానీ ప్రసిద్ధం",
       "తెలుగు భాష చాలా అందమైనది"
     ],
-    fonts: ["Noto Sans Telugu", "Noto Serif Telugu", "Hind Guntur", "Ramaraja", "Tiro Telugu", "Mallanna"],
+    fonts: ["Noto Serif Telugu", "Noto Sans Telugu", "Hind Guntur", "Ramaraja", "Tiro Telugu", "Mallanna"],
     tips: [
       "Very rounded letters with a small \"check-mark\" or v-tick on top of nearly every character.",
       "Nothing angular — pure curves. Looks like 'O's wearing tiny party hats'.",
@@ -352,7 +352,7 @@ const SCRIPTS = [
       "நாங்கள் சாப்பாடு சாப்பிட்டோம்",
       "சென்னை மரினா பீச் மிக நீளமானது"
     ],
-    fonts: ["Noto Sans Tamil", "Noto Serif Tamil", "Hind Madurai", "Catamaran", "Tiro Tamil", "Mukta Malar"],
+    fonts: ["Noto Serif Tamil", "Noto Sans Tamil", "Hind Madurai", "Catamaran", "Tiro Tamil", "Mukta Malar"],
     tips: [
       "Boxy/angular letterforms — square-looking, mechanical, no top features.",
       "Far fewer loops than other South Indian scripts — the most rectilinear of the family.",
@@ -484,7 +484,7 @@ const SCRIPTS = [
       "המסעדה פתוחה משעה תשע בבוקר",
       "ילדים, היזהרו בדרך לבית הספר"
     ],
-    fonts: ["Noto Sans Hebrew", "Noto Serif Hebrew", "Frank Ruhl Libre", "Heebo", "Assistant", "David Libre"],
+    fonts: ["Frank Ruhl Libre", "Noto Serif Hebrew", "Noto Sans Hebrew", "Heebo", "Assistant", "David Libre"],
     tips: [
       "Square, blocky letters with strong horizontal tops — like little gates and hooks.",
       "Reads right-to-left. No ascenders or descenders — everything sits on one band.",
