@@ -230,7 +230,7 @@ const SCRIPTS = [
       "ပုဂံ ရှေးဟောင်းမြို့တော်",
       "ရွှေတိဂုံ ဘုရားကြီး မင်္ဂလာ"
     ],
-    fonts: ["Noto Sans Myanmar", "Noto Serif Myanmar", "Padauk"],
+    fonts: ["Padauk", "Noto Sans Myanmar", "Noto Serif Myanmar"],
     tips: [
       "Almost entirely circles and C-shapes — like a row of soap bubbles or Cheerios.",
       "Big C that looks like it is surrounding another letter — distinctive Burmese silhouette.",
@@ -388,7 +388,7 @@ const SCRIPTS = [
       "Cà phê sữa đá là thức uống truyền thống",
       "Lễ hội Tết Nguyên Đán quan trọng nhất trong năm"
     ],
-    fonts: ["Be Vietnam Pro", "Lora", "Roboto Slab", "Playfair Display", "Anton", "Merriweather", "IBM Plex Sans"],
+    fonts: ["Lora", "Be Vietnam Pro", "Roboto Slab", "Playfair Display", "Anton", "Merriweather", "IBM Plex Sans"],
     tips: [
       "Latin alphabet + heavy diacritics: stacked accent marks (ồ, ắ, ễ, ự).",
       "If you see Latin text with multiple accents on the same vowel, it's Vietnamese.",
@@ -417,7 +417,7 @@ const SCRIPTS = [
       "বাংলা সাহিত্য অনেক সমৃদ্ধ",
       "আজ চা পান করতে চাও কি"
     ],
-    fonts: ["Noto Sans Bengali", "Noto Serif Bengali", "Hind Siliguri", "Galada", "Tiro Bangla", "Baloo Da 2"],
+    fonts: ["Noto Serif Bengali", "Noto Sans Bengali", "Hind Siliguri", "Galada", "Tiro Bangla", "Baloo Da 2"],
     tips: [
       "Headstroke like Devanagari, BUT with curvier, flame-shaped letterforms.",
       "Triangular wedges and hooks hang below the baseline — distinctive.",
@@ -450,7 +450,7 @@ const SCRIPTS = [
       "මම කොළඹ විශ්වවිද්‍යාලයේ ඉගෙන ගන්නවා",
       "අද රාත්‍රී ආහාරය මොකක්ද"
     ],
-    fonts: ["Noto Sans Sinhala", "Noto Serif Sinhala", "Abhaya Libre", "Yaldevi", "Gemunu Libre"],
+    fonts: ["Abhaya Libre", "Noto Serif Sinhala", "Noto Sans Sinhala", "Yaldevi", "Gemunu Libre"],
     tips: [
       "Loops, loops, loops — even more than Lao or Burmese. Many letters are double-looped.",
       "If it looks like Lao but somehow even rounder and more cursive, it's Sinhala.",
