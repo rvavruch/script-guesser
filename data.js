@@ -293,7 +293,7 @@ const SCRIPTS = [
       "દિવાળી અમારો સૌથી મોટો તહેવાર",
       "મુંબઈ થી અમદાવાદ ની ટ્રેન"
     ],
-    fonts: ["Noto Sans Gujarati", "Noto Serif Gujarati", "Hind Vadodara", "Mukta Vaani", "Anek Gujarati"],
+    fonts: ["Noto Serif Gujarati", "Noto Sans Gujarati", "Hind Vadodara", "Mukta Vaani", "Anek Gujarati"],
     tips: [
       "Looks like Devanagari but with NO headstroke. \"Broken clothesline\".",
       "Letters round at the top instead of being capped flat — curvier than Devanagari.",
@@ -514,7 +514,7 @@ const SCRIPTS = [
       "السوق مفتوح يوم الجمعة بعد الصلاة",
       "الفطور هو أهم وجبة في اليوم"
     ],
-    fonts: ["Noto Sans Arabic", "Noto Serif Arabic", "Cairo", "Tajawal", "Amiri", "Reem Kufi", "Aref Ruqaa", "IBM Plex Sans Arabic"],
+    fonts: ["Noto Serif Arabic", "Noto Sans Arabic", "Cairo", "Tajawal", "Amiri", "Reem Kufi", "Aref Ruqaa", "IBM Plex Sans Arabic"],
     tips: [
       "Flowing connected cursive, reads right-to-left — letters merge into each other.",
       "Lots of dots above and below the baseline — that's how letters are distinguished.",
