@@ -81,7 +81,10 @@ async function renderMap(elementId, ch) {
   if (!el) return;
 
   const geo = await loadCountriesGeo();
-  const codes = ch.correct.countries.map((c) => c.code).filter(Boolean);
+  // `code` may be a string or array of strings (e.g. Devanagari spans many states).
+  const codes = ch.correct.countries.flatMap((c) =>
+    Array.isArray(c.code) ? c.code : c.code ? [c.code] : []
+  );
   const features = [];
   for (const code of codes) {
     const f = geo.features.find((ff) => ff.id === code);

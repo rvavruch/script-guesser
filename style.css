@@ -29,14 +29,25 @@ html, body {
 
 header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 16px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 12px;
   margin-bottom: 20px;
 }
 
+header .title { min-width: 0; }
 header h1 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; }
+header .subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  header { flex-direction: column; gap: 6px; align-items: flex-start; }
+}
 
 #status-bar {
   font-size: 13px;

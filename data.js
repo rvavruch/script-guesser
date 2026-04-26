@@ -271,7 +271,7 @@ const SCRIPTS = [
     ],
     history: "Descends from Brahmi (~3rd century BC, the script of Ashoka's edicts) via the Gupta script and Nāgarī. Took its modern form around 1000 years ago. The 'headstroke' is a relic of scribes drawing a guideline first to keep characters aligned during palm-leaf or paper writing.",
     countries: [
-      { flag: "🇮🇳", name: "India (north)", code: "IND" },
+      { flag: "🇮🇳", name: "North India / Hindi belt", code: ["IN-UP", "IN-MP", "IN-RJ", "IN-BR", "IN-HR", "IN-HP", "IN-UT", "IN-DL", "IN-CT", "IN-JH", "IN-MH"] },
       { flag: "🇳🇵", name: "Nepal", code: "NPL" }
     ],
     mapBbox: "68.0,22.0,89.0,32.0"
@@ -302,7 +302,7 @@ const SCRIPTS = [
       "Used in Gujarat — coastal NW India."
     ],
     history: "Diverged from Devanagari around the 16th century. The 'missing headstroke' is widely attributed to Gujarat's mercantile culture: traders wanted faster handwriting, and dropping the top bar saved time per character. The script crystallised in the 19th century with the rise of printed Gujarati literature.",
-    countries: [{ flag: "🇮🇳", name: "Gujarat (India)", code: "IND" }],
+    countries: [{ flag: "🇮🇳", name: "Gujarat (India)", code: "IN-GJ" }],
     mapBbox: "68.0,20.0,75.0,25.0"
   },
   {
@@ -331,7 +331,7 @@ const SCRIPTS = [
       "Used in the Telugu-speaking states (Andhra Pradesh, Telangana)."
     ],
     history: "Derived from the Kadamba script (~5th century AD), a southern offshoot of Brahmi. The distinctive 'check-mark' on top of letters comes from palm-leaf inscription technique — strokes had to avoid splitting the leaf, producing rounded shapes with delicate top hooks. Kannada (a sister script) shares the same origin and looks very similar.",
-    countries: [{ flag: "🇮🇳", name: "Andhra Pradesh / Telangana", code: "IND" }],
+    countries: [{ flag: "🇮🇳", name: "Andhra Pradesh / Telangana", code: "IN-AP" }],
     mapBbox: "76.0,12.0,85.0,20.0"
   },
   {
@@ -362,7 +362,7 @@ const SCRIPTS = [
     ],
     history: "One of the oldest continuously-used scripts in India, with a distinct lineage from Tamil-Brahmi (~3rd century BC). The angular, boxy shapes survived because Tamil was often inscribed on stone or metal, where curves were harder to carve cleanly than straight lines — the opposite trade-off from Telugu and Sinhala's palm-leaf curves.",
     countries: [
-      { flag: "🇮🇳", name: "Tamil Nadu (India)", code: "IND" },
+      { flag: "🇮🇳", name: "Tamil Nadu (India)", code: "IN-TN" },
       { flag: "🇱🇰", name: "Sri Lanka (north)", code: "LKA" },
       { flag: "🇸🇬", name: "Singapore", code: "SGP" }
     ],
@@ -428,7 +428,7 @@ const SCRIPTS = [
     history: "Descends from the Eastern Nagari branch of Brahmic, sharing common ancestry with Devanagari but diverging visually around the 11th century. The flame-shaped curves and triangular hooks below the line are what distinguish it from Devanagari's blocky uprights. Bengali is the seventh most-spoken language in the world by native speakers.",
     countries: [
       { flag: "🇧🇩", name: "Bangladesh", code: "BGD" },
-      { flag: "🇮🇳", name: "West Bengal (India)", code: "IND" }
+      { flag: "🇮🇳", name: "West Bengal (India)", code: "IN-WB" }
     ],
     mapBbox: "85.0,20.0,93.0,27.0"
   },
