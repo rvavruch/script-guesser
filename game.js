@@ -47,6 +47,83 @@ function findGuessedScript(ch) {
     : SCRIPTS.find((s) => s.region === ch.guess);
 }
 
+// ---------- map (Leaflet + bundled country GeoJSON) ----------
+
+// HKG, MAC, SGP are absent from the simplified world.geo.json (city-states /
+// SARs are commonly omitted at country-level resolution). Use small bbox
+// rectangles so they still render as a highlighted shape on the map.
+const SUPPLEMENTAL_GEOMETRIES = {
+  HKG: { type: "Polygon", coordinates: [[[113.83, 22.15], [114.45, 22.15], [114.45, 22.55], [113.83, 22.55], [113.83, 22.15]]] },
+  MAC: { type: "Polygon", coordinates: [[[113.53, 22.09], [113.60, 22.09], [113.60, 22.22], [113.53, 22.22], [113.53, 22.09]]] },
+  SGP: { type: "Polygon", coordinates: [[[103.60, 1.20],  [104.05, 1.20],  [104.05, 1.48],  [103.60, 1.48],  [103.60, 1.20]]] }
+};
+
+let _countriesGeoPromise = null;
+function loadCountriesGeo() {
+  if (!_countriesGeoPromise) {
+    _countriesGeoPromise = fetch("countries.geo.json").then((r) => r.json());
+  }
+  return _countriesGeoPromise;
+}
+loadCountriesGeo(); // pre-fetch at boot so the first map render is fast
+
+let _currentMap = null;
+function disposeMap() {
+  if (_currentMap) {
+    _currentMap.remove();
+    _currentMap = null;
+  }
+}
+
+async function renderMap(elementId, ch) {
+  if (typeof L === "undefined") return; // Leaflet failed to load
+  const el = document.getElementById(elementId);
+  if (!el) return;
+
+  const geo = await loadCountriesGeo();
+  const codes = ch.correct.countries.map((c) => c.code).filter(Boolean);
+  const features = [];
+  for (const code of codes) {
+    const f = geo.features.find((ff) => ff.id === code);
+    if (f) {
+      features.push(f);
+    } else if (SUPPLEMENTAL_GEOMETRIES[code]) {
+      features.push({
+        type: "Feature",
+        id: code,
+        properties: { name: code },
+        geometry: SUPPLEMENTAL_GEOMETRIES[code]
+      });
+    }
+  }
+
+  // Replace any prior map (re-renders during the same feedback view).
+  disposeMap();
+  const map = L.map(el, { attributionControl: true, scrollWheelZoom: false });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap",
+    maxZoom: 8
+  }).addTo(map);
+
+  if (features.length > 0) {
+    const layer = L.geoJSON(
+      { type: "FeatureCollection", features },
+      { style: { color: "#3ddc97", weight: 2, fillColor: "#3ddc97", fillOpacity: 0.35 } }
+    ).addTo(map);
+    try {
+      map.fitBounds(layer.getBounds(), { padding: [12, 12] });
+    } catch (_e) {
+      const [minLon, minLat, maxLon, maxLat] = ch.correct.mapBbox.split(",").map(Number);
+      map.fitBounds([[minLat, minLon], [maxLat, maxLon]]);
+    }
+  } else {
+    const [minLon, minLat, maxLon, maxLat] = ch.correct.mapBbox.split(",").map(Number);
+    map.fitBounds([[minLat, minLon], [maxLat, maxLon]]);
+  }
+
+  _currentMap = map;
+}
+
 function buildRound() {
   // 5 distinct scripts.
   const chosen = shuffle(SCRIPTS).slice(0, ROUND_SIZE);
@@ -124,6 +201,7 @@ function renderStatus() {
 // ---------- screens ----------
 
 function renderStart() {
+  disposeMap();
   round = null;
   renderStatus();
   stage.innerHTML = `
@@ -165,6 +243,7 @@ function comparisonHtml(ch) {
 }
 
 function renderChallenge() {
+  disposeMap();
   renderStatus();
   const ch = round.challenges[round.index];
   const promptText =
@@ -216,7 +295,6 @@ function renderFeedback() {
   const countriesHtml = ch.correct.countries
     .map((c) => `<span class="country">${c.flag} ${escapeHtml(c.name)}</span>`)
     .join("");
-  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${ch.correct.mapBbox}&layer=mapnik`;
 
   // Re-render same sample in same font so the player can re-look at exactly what they failed on.
   stage.innerHTML = `
@@ -230,7 +308,7 @@ function renderFeedback() {
       <ul>${tipsHtml}</ul>
       <div class="history"><strong>History:</strong> ${escapeHtml(ch.correct.history)}</div>
       <div class="regions"><strong>Used in:</strong> ${countriesHtml}</div>
-      <iframe class="map-frame" src="${mapSrc}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of where ${escapeHtml(ch.correct.name)} is used"></iframe>
+      <div class="map-canvas" id="result-map" aria-label="Map showing where ${escapeHtml(ch.correct.name)} is used"></div>
     </div>
     <div class="actions">
       <button class="btn" id="next-btn">${round.index + 1 < ROUND_SIZE ? "Next" : "See score"}</button>
@@ -254,9 +332,13 @@ function renderFeedback() {
     if (round.index >= ROUND_SIZE) renderSummary();
     else renderChallenge();
   });
+
+  // Render the map after the DOM is in place. Async (waits for GeoJSON fetch).
+  renderMap("result-map", ch);
 }
 
 function renderSummary() {
+  disposeMap();
   statusBar.innerHTML = `<span>Round complete</span>`;
   const items = round.challenges.map((ch) => {
     const right = ch.isCorrect;

@@ -40,7 +40,11 @@ const SCRIPTS = [
       "관계자 외 출입을 금합니다",
       "지하철 2호선 강남역 출구",
       "오늘 비빔밥과 막걸리를 먹었습니다",
-      "여기는 주차 금지 구역입니다"
+      "여기는 주차 금지 구역입니다",
+      "오늘은 정말 즐거운 하루였어요",
+      "한국 전통 음식인 불고기를 좋아합니다",
+      "이번 주말에 부산으로 여행을 갈 거예요",
+      "한강에서 자전거를 타면 정말 시원합니다"
     ],
     fonts: ["Noto Sans KR", "Noto Serif KR", "Nanum Pen Script", "Black Han Sans"],
     tips: [
@@ -50,7 +54,7 @@ const SCRIPTS = [
       "vs Chinese: Chinese is dense ideographs without any circles. Korean's circles ㅇ are the easiest tell."
     ],
     history: "Created in 1443 by King Sejong the Great, designed as a phonetic alphabet to replace Chinese characters and lift commoner literacy. Hangul is one of the few writing systems with a known inventor — and the consonant shapes deliberately mimic the position of the mouth and tongue when producing each sound.",
-    countries: [{ flag: "🇰🇷", name: "South Korea" }],
+    countries: [{ flag: "🇰🇷", name: "South Korea", code: "KOR" }],
     mapBbox: "124.5,33.0,131.0,39.0"
   },
   {
@@ -66,7 +70,11 @@ const SCRIPTS = [
       "新宿駅の東口で待っています",
       "立入禁止区域につき注意してください",
       "コンビニで弁当を買いました",
-      "桜の季節になりました"
+      "桜の季節になりました",
+      "今日は天気がとても良いですね",
+      "京都の古いお寺を訪ねました",
+      "美味しい和食を食べに行きましょう",
+      "電車は十分後に到着いたします"
     ],
     fonts: ["Noto Sans JP", "Noto Serif JP", "Sawarabi Mincho", "Yusei Magic"],
     tips: [
@@ -77,7 +85,7 @@ const SCRIPTS = [
       "Real-world: white license plates with green or black text."
     ],
     history: "Imported Chinese characters (Kanji) arrived in Japan around the 5th century AD. Hiragana and Katakana were developed in the 9th–10th centuries — Hiragana from cursive Kanji shorthand used by court women, Katakana from Kanji fragments used by Buddhist monks. Modern Japanese mixes all three deliberately, with each script taking different roles in a sentence.",
-    countries: [{ flag: "🇯🇵", name: "Japan" }],
+    countries: [{ flag: "🇯🇵", name: "Japan", code: "JPN" }],
     mapBbox: "129.0,30.0,146.0,46.0"
   },
   {
@@ -93,7 +101,11 @@ const SCRIPTS = [
       "出口請走樓梯謝謝",
       "九龍灣站下車轉乘地鐵",
       "中華民國國慶日快樂",
-      "牛肉麵店今晚不營業"
+      "牛肉麵店今晚不營業",
+      "今天天氣真好，我們去公園散步吧",
+      "我喜歡台灣的夜市文化",
+      "請問最近的捷運站怎麼走",
+      "故宮博物院收藏了許多珍貴文物"
     ],
     fonts: ["Noto Sans TC", "Noto Serif TC", "ZCOOL XiaoWei", "Long Cang"],
     tips: [
@@ -104,9 +116,9 @@ const SCRIPTS = [
     ],
     history: "Han characters have been in continuous use for over 3,000 years — one of the oldest writing systems still in everyday use. The PRC introduced Simplified Chinese in the 1950s to raise literacy, but Taiwan, Hong Kong, and Macau retained Traditional forms. Since mainland China isn't on Street View, GeoGuessr's Han is nearly always Traditional.",
     countries: [
-      { flag: "🇹🇼", name: "Taiwan" },
-      { flag: "🇭🇰", name: "Hong Kong" },
-      { flag: "🇲🇴", name: "Macau" }
+      { flag: "🇹🇼", name: "Taiwan", code: "TWN" },
+      { flag: "🇭🇰", name: "Hong Kong", code: "HKG" },
+      { flag: "🇲🇴", name: "Macau", code: "MAC" }
     ],
     mapBbox: "113.0,21.0,123.0,26.0"
   },
@@ -123,7 +135,11 @@ const SCRIPTS = [
       "ห้ามจอดรถ บริเวณนี้ตลอดเวลา",
       "สวัสดีครับ ยินดีที่ได้รู้จัก",
       "ทางเข้าด้านหลังของอาคาร",
-      "ข้าวผัดกระเพราหมูกรอบ ห้าสิบบาท"
+      "ข้าวผัดกระเพราหมูกรอบ ห้าสิบบาท",
+      "วันนี้อากาศดีมาก ออกไปเดินเล่นกัน",
+      "ตลาดนัดจตุจักร เปิดเสาร์อาทิตย์",
+      "ผมชอบกินก๋วยเตี๋ยวต้มยำกุ้ง",
+      "ขอข้าวเหนียวมะม่วงหนึ่งจานครับ"
     ],
     fonts: ["Noto Sans Thai", "Noto Serif Thai", "Sarabun", "Prompt"],
     tips: [
@@ -136,7 +152,7 @@ const SCRIPTS = [
       "Real-world: blue/white street signs, left-hand drive."
     ],
     history: "Created in 1283 by King Ramkhamhaeng of Sukhothai, derived from the Old Khmer script. Designed deliberately to fit Thai's tonal nature with explicit tone marks above the line. The traditional looped style mirrors the Sukhothai stone inscriptions; the loopless modern style (Prompt, Kanit) is a 20th–21st century convention for cleaner branding.",
-    countries: [{ flag: "🇹🇭", name: "Thailand" }],
+    countries: [{ flag: "🇹🇭", name: "Thailand", code: "THA" }],
     mapBbox: "97.0,5.6,105.6,20.5"
   },
   {
@@ -150,7 +166,11 @@ const SCRIPTS = [
       "ຂອບໃຈຫຼາຍໆ ສຳລັບການຊ່ວຍເຫຼືອ",
       "ຫ້າມຈອດລົດ ຢູ່ບໍລິເວນນີ້",
       "ທາງເຂົ້າ ຮ້ານອາຫານລາວ",
-      "ຮ້ານອາຫານ ເປີດທຸກວັນ"
+      "ຮ້ານອາຫານ ເປີດທຸກວັນ",
+      "ມື້ນີ້ ອາກາດດີຫຼາຍ",
+      "ຫຼວງພະບາງ ເມືອງເກົ່າ",
+      "ຂ້ອຍ ມັກກິນເຂົ້າຂົ້ວ",
+      "ພາສາລາວ ງ່າຍສຳລັບຊາວລາວ"
     ],
     fonts: ["Noto Sans Lao", "Noto Serif Lao"],
     tips: [
@@ -161,7 +181,7 @@ const SCRIPTS = [
       "Real-world tell: yellow private-car license plates, right-hand drive."
     ],
     history: "Closely related to Thai — both descended from Old Khmer via the Sukhothai inscription style. The Lao alphabet was simplified during 20th-century reforms (silent etymological consonants were dropped), giving it 27 letters compared to Thai's 44. That's why Lao text often looks 'simpler' than Thai of the same length.",
-    countries: [{ flag: "🇱🇦", name: "Laos" }],
+    countries: [{ flag: "🇱🇦", name: "Laos", code: "LAO" }],
     mapBbox: "100.0,13.5,108.0,22.5"
   },
   {
@@ -176,7 +196,11 @@ const SCRIPTS = [
       "ហាមជក់បារី ក្នុងបន្ទប់នេះ",
       "ច្រកចូល ភោជនីយដ្ឋានខ្មែរ",
       "សៀមរាប ប្រាសាទអង្គរវត្ត",
-      "សួស្ដី ខ្ញុំសុខសប្បាយ"
+      "សួស្ដី ខ្ញុំសុខសប្បាយ",
+      "ខ្ញុំចង់ទៅទស្សនាប្រាសាទអង្គរ",
+      "អាហារខ្មែរ ឆ្ងាញ់ណាស់",
+      "បាយឆា ជាអាហារពេញនិយម",
+      "ភាសាខ្មែរ មានអក្សរច្រើន"
     ],
     fonts: ["Noto Sans Khmer", "Noto Serif Khmer", "Battambang", "Moul"],
     tips: [
@@ -187,7 +211,7 @@ const SCRIPTS = [
       "Khmer is the parent of Thai and Lao — Sukhothai's Ramkhamhaeng adapted Old Khmer in the 13th century. That's why Thai/Lao basic shapes feel familiar."
     ],
     history: "One of the oldest Brahmic-derived scripts in SE Asia, used since around the 7th century AD during the early Khmer Empire (Angkor period). Old Khmer is the parent of both Thai and Lao — Sukhothai's King Ramkhamhaeng modified it when designing Thai in 1283. The ornate temple-inscription style is preserved in modern Khmer signage today.",
-    countries: [{ flag: "🇰🇭", name: "Cambodia" }],
+    countries: [{ flag: "🇰🇭", name: "Cambodia", code: "KHM" }],
     mapBbox: "102.0,10.0,108.0,15.0"
   },
   {
@@ -201,7 +225,10 @@ const SCRIPTS = [
       "ကျေးဇူးတင်ပါတယ် အကူအညီအတွက်",
       "မန္တလေးမြို့ ဒုတိယမြို့တော်",
       "ဝန်ထမ်းသာ ဝင်ခွင့်ပြုသည်",
-      "ဆေးလိပ်မသောက်ရ ကျေးဇူးပြု၍"
+      "ဆေးလိပ်မသောက်ရ ကျေးဇူးပြု၍",
+      "မြန်မာ အစားအစာ အရသာရှိသည်",
+      "ပုဂံ ရှေးဟောင်းမြို့တော်",
+      "ရွှေတိဂုံ ဘုရားကြီး မင်္ဂလာ"
     ],
     fonts: ["Noto Sans Myanmar", "Noto Serif Myanmar", "Padauk"],
     tips: [
@@ -212,7 +239,7 @@ const SCRIPTS = [
       "Real-world: rare in GeoGuessr (limited Street View coverage of Myanmar)."
     ],
     history: "Descends from the Pyu/Mon scripts (~11th century), Brahmic offshoots brought to Burma by Buddhist missionaries. The very rounded forms come from palm-leaf writing — straight lines split the leaf when carved with a stylus, so scribes made everything curved. Sinhala and Telugu share the same palm-leaf origin story and the same circular tendency.",
-    countries: [{ flag: "🇲🇲", name: "Myanmar" }],
+    countries: [{ flag: "🇲🇲", name: "Myanmar", code: "MMR" }],
     mapBbox: "92.0,9.0,101.0,28.5"
   },
   {
@@ -228,7 +255,11 @@ const SCRIPTS = [
       "मुंबई महाराष्ट्र की राजधानी",
       "धूम्रपान निषेध है यहाँ",
       "प्रवेश द्वार बंद है",
-      "रेलवे स्टेशन इस तरफ है"
+      "रेलवे स्टेशन इस तरफ है",
+      "गंगा नदी हिंदुओं के लिए पवित्र है",
+      "ताज महल भारत का गौरव है",
+      "मेरा नाम राजेश है, मैं दिल्ली से हूँ",
+      "बॉलीवुड फिल्में दुनिया भर में लोकप्रिय हैं"
     ],
     fonts: ["Noto Sans Devanagari", "Noto Serif Devanagari", "Hind", "Mukta"],
     tips: [
@@ -240,8 +271,8 @@ const SCRIPTS = [
     ],
     history: "Descends from Brahmi (~3rd century BC, the script of Ashoka's edicts) via the Gupta script and Nāgarī. Took its modern form around 1000 years ago. The 'headstroke' is a relic of scribes drawing a guideline first to keep characters aligned during palm-leaf or paper writing.",
     countries: [
-      { flag: "🇮🇳", name: "India (north)" },
-      { flag: "🇳🇵", name: "Nepal" }
+      { flag: "🇮🇳", name: "India (north)", code: "IND" },
+      { flag: "🇳🇵", name: "Nepal", code: "NPL" }
     ],
     mapBbox: "68.0,22.0,89.0,32.0"
   },
@@ -256,7 +287,11 @@ const SCRIPTS = [
       "આભાર તમારી મદદ માટે",
       "નમસ્તે કેમ છો તમે",
       "પ્રવેશ માટે ટિકિટ જરૂરી",
-      "સ્વાગત છે અમારા ઘરે"
+      "સ્વાગત છે અમારા ઘરે",
+      "મને ગુજરાતી ભોજન બહુ ભાવે છે",
+      "ગાંધીનગર ગુજરાતનું પાટનગર છે",
+      "દિવાળી અમારો સૌથી મોટો તહેવાર",
+      "મુંબઈ થી અમદાવાદ ની ટ્રેન"
     ],
     fonts: ["Noto Sans Gujarati", "Noto Serif Gujarati", "Hind Vadodara", "Mukta Vaani"],
     tips: [
@@ -267,7 +302,7 @@ const SCRIPTS = [
       "Used in Gujarat — coastal NW India."
     ],
     history: "Diverged from Devanagari around the 16th century. The 'missing headstroke' is widely attributed to Gujarat's mercantile culture: traders wanted faster handwriting, and dropping the top bar saved time per character. The script crystallised in the 19th century with the rise of printed Gujarati literature.",
-    countries: [{ flag: "🇮🇳", name: "Gujarat (India)" }],
+    countries: [{ flag: "🇮🇳", name: "Gujarat (India)", code: "IND" }],
     mapBbox: "68.0,20.0,75.0,25.0"
   },
   {
@@ -281,7 +316,11 @@ const SCRIPTS = [
       "ధన్యవాదాలు మీ సహాయానికి",
       "విజయవాడ ఆంధ్రప్రదేశ్ లోని నగరం",
       "ప్రవేశం ఉచితం అందరికీ",
-      "మా ఇంటికి స్వాగతం"
+      "మా ఇంటికి స్వాగతం",
+      "నేను తెలుగు సినిమాలు చూస్తాను",
+      "ఆంధ్ర భోజనం చాలా రుచిగా ఉంటుంది",
+      "హైదరాబాద్ బిర్యానీ ప్రసిద్ధం",
+      "తెలుగు భాష చాలా అందమైనది"
     ],
     fonts: ["Noto Sans Telugu", "Noto Serif Telugu", "Hind Guntur", "Ramaraja"],
     tips: [
@@ -292,7 +331,7 @@ const SCRIPTS = [
       "Used in the Telugu-speaking states (Andhra Pradesh, Telangana)."
     ],
     history: "Derived from the Kadamba script (~5th century AD), a southern offshoot of Brahmi. The distinctive 'check-mark' on top of letters comes from palm-leaf inscription technique — strokes had to avoid splitting the leaf, producing rounded shapes with delicate top hooks. Kannada (a sister script) shares the same origin and looks very similar.",
-    countries: [{ flag: "🇮🇳", name: "Andhra Pradesh / Telangana" }],
+    countries: [{ flag: "🇮🇳", name: "Andhra Pradesh / Telangana", code: "IND" }],
     mapBbox: "76.0,12.0,85.0,20.0"
   },
   {
@@ -307,7 +346,11 @@ const SCRIPTS = [
       "வணக்கம் எப்படி இருக்கிறீர்கள்",
       "மதுரை மீனாட்சி அம்மன் கோயில்",
       "சென்னை மெட்ரோ ரயில் நிலையம்",
-      "தயவுசெய்து இங்கே புகைப்பிடிக்க வேண்டாம்"
+      "தயவுசெய்து இங்கே புகைப்பிடிக்க வேண்டாம்",
+      "தமிழ் மொழி உலகின் தொன்மையான மொழிகளில் ஒன்று",
+      "தமிழ்நாட்டில் கோயில்கள் அதிகம் உள்ளன",
+      "நாங்கள் சாப்பாடு சாப்பிட்டோம்",
+      "சென்னை மரினா பீச் மிக நீளமானது"
     ],
     fonts: ["Noto Sans Tamil", "Noto Serif Tamil", "Hind Madurai", "Catamaran"],
     tips: [
@@ -319,9 +362,9 @@ const SCRIPTS = [
     ],
     history: "One of the oldest continuously-used scripts in India, with a distinct lineage from Tamil-Brahmi (~3rd century BC). The angular, boxy shapes survived because Tamil was often inscribed on stone or metal, where curves were harder to carve cleanly than straight lines — the opposite trade-off from Telugu and Sinhala's palm-leaf curves.",
     countries: [
-      { flag: "🇮🇳", name: "Tamil Nadu (India)" },
-      { flag: "🇱🇰", name: "Sri Lanka (north)" },
-      { flag: "🇸🇬", name: "Singapore" }
+      { flag: "🇮🇳", name: "Tamil Nadu (India)", code: "IND" },
+      { flag: "🇱🇰", name: "Sri Lanka (north)", code: "LKA" },
+      { flag: "🇸🇬", name: "Singapore", code: "SGP" }
     ],
     mapBbox: "76.0,5.0,82.0,14.0"
   },
@@ -339,7 +382,11 @@ const SCRIPTS = [
       "Cấm hút thuốc trong khu vực",
       "Đường Lê Lợi quận một",
       "Bún chả Hà Nội nổi tiếng",
-      "Vịnh Hạ Long tuyệt đẹp lắm"
+      "Vịnh Hạ Long tuyệt đẹp lắm",
+      "Tôi rất thích văn hóa Việt Nam",
+      "Sài Gòn ngày nay phát triển rất nhanh",
+      "Cà phê sữa đá là thức uống truyền thống",
+      "Lễ hội Tết Nguyên Đán quan trọng nhất trong năm"
     ],
     fonts: ["Be Vietnam Pro", "Lora", "Roboto Slab", "Playfair Display"],
     tips: [
@@ -349,7 +396,7 @@ const SCRIPTS = [
       "Real-world: tons of motorbikes, red/yellow flag everywhere."
     ],
     history: "The current Latin-based alphabet (Quốc Ngữ, 'national language') was developed by 17th-century Portuguese and French Jesuit missionaries — most notably Alexandre de Rhodes — to romanise Vietnamese. It replaced Chữ Nôm (a Chinese-character-based system) in official use after French colonisation in the 19th century. The diacritics encode Vietnamese's six tones plus distinctive vowels (ư, ơ, đ).",
-    countries: [{ flag: "🇻🇳", name: "Vietnam" }],
+    countries: [{ flag: "🇻🇳", name: "Vietnam", code: "VNM" }],
     mapBbox: "102.0,8.0,110.0,24.0"
   },
   {
@@ -364,7 +411,11 @@ const SCRIPTS = [
       "আমি বাংলায় কথা বলি",
       "চট্টগ্রাম বাংলাদেশের বন্দর শহর",
       "এখানে প্রবেশ নিষেধ",
-      "কলকাতা পশ্চিমবঙ্গের রাজধানী"
+      "কলকাতা পশ্চিমবঙ্গের রাজধানী",
+      "ঢাকা বাংলাদেশের সবচেয়ে বড় শহর",
+      "রবীন্দ্রনাথ ঠাকুর একজন মহান কবি",
+      "বাংলা সাহিত্য অনেক সমৃদ্ধ",
+      "আজ চা পান করতে চাও কি"
     ],
     fonts: ["Noto Sans Bengali", "Noto Serif Bengali", "Hind Siliguri", "Galada"],
     tips: [
@@ -376,8 +427,8 @@ const SCRIPTS = [
     ],
     history: "Descends from the Eastern Nagari branch of Brahmic, sharing common ancestry with Devanagari but diverging visually around the 11th century. The flame-shaped curves and triangular hooks below the line are what distinguish it from Devanagari's blocky uprights. Bengali is the seventh most-spoken language in the world by native speakers.",
     countries: [
-      { flag: "🇧🇩", name: "Bangladesh" },
-      { flag: "🇮🇳", name: "West Bengal (India)" }
+      { flag: "🇧🇩", name: "Bangladesh", code: "BGD" },
+      { flag: "🇮🇳", name: "West Bengal (India)", code: "IND" }
     ],
     mapBbox: "85.0,20.0,93.0,27.0"
   },
@@ -393,7 +444,11 @@ const SCRIPTS = [
       "ස්තූතියි ඔබගේ උදව්වට",
       "මහනුවර ලස්සන නගරයක්",
       "මෙතැනින් ඇතුල් වන්න",
-      "කරුණාකර ඉදිරියට යන්න"
+      "කරුණාකර ඉදිරියට යන්න",
+      "ශ්‍රී ලංකාවේ තේ ලෝක ප්‍රසිද්ධයි",
+      "සිංහල භාෂාව ඉතා පැරණි භාෂාවකි",
+      "මම කොළඹ විශ්වවිද්‍යාලයේ ඉගෙන ගන්නවා",
+      "අද රාත්‍රී ආහාරය මොකක්ද"
     ],
     fonts: ["Noto Sans Sinhala", "Noto Serif Sinhala"],
     tips: [
@@ -401,10 +456,13 @@ const SCRIPTS = [
       "If it looks like Lao but somehow even rounder and more cursive, it's Sinhala.",
       "vs Tamil: Tamil is angular; Sinhala is all loops. Both appear in Sri Lanka — north uses Tamil, south uses Sinhala.",
       "vs Telugu: both rounded, but Sinhala lacks the top check-mark and uses more curls.",
+      "Often has little 'p' periscopes popping up from some letters. In most South Asian scripts, every consonant has an inherent vowel (usually an 'a' sound). The Hal Kirima is a vowel-killer (a Virama).",
+      "Sinhala looks very round and 'ear-shaped'. Many people think it looks like a collection of little doodles of ears or lightbulbs.",
+      "You will almost always see Sinhala (round) paired with Tamil (boxy/angular) and often English. If you see all three, you are 100% in Sri Lanka.",
       "Sri Lanka also has Tamil signage in the north — both can appear on the same sign."
     ],
     history: "Among the oldest scripts in South Asia — descended from Brahmi (~3rd century BC) via the southern Brahmic branch. Its highly rounded forms come from the same palm-leaf tradition as Burmese and Telugu: curves don't split the leaf when inscribed with a stylus. Sri Lanka's Buddhist monastic tradition preserved the script through centuries of copying religious texts.",
-    countries: [{ flag: "🇱🇰", name: "Sri Lanka" }],
+    countries: [{ flag: "🇱🇰", name: "Sri Lanka", code: "LKA" }],
     mapBbox: "79.0,5.5,82.0,10.0"
   },
   {
@@ -420,7 +478,11 @@ const SCRIPTS = [
       "חיפה עיר נמל יפה",
       "כניסה חופשית לכולם",
       "אסור לעשן בתוך הבניין",
-      "בית קפה פתוח עכשיו"
+      "בית קפה פתוח עכשיו",
+      "אני אוהב את העיר הזאת מאוד",
+      "ים המלח הוא המקום הנמוך בעולם",
+      "המסעדה פתוחה משעה תשע בבוקר",
+      "ילדים, היזהרו בדרך לבית הספר"
     ],
     fonts: ["Noto Sans Hebrew", "Noto Serif Hebrew", "Frank Ruhl Libre", "Heebo"],
     tips: [
@@ -430,7 +492,7 @@ const SCRIPTS = [
       "If you also see Arabic on the same sign, you're almost certainly in Israel."
     ],
     history: "One of the oldest continuously-used alphabets — descended from Phoenician via Aramaic. The square 'Aramaic' form became standard for Hebrew during the Babylonian exile (6th century BC) and is what's used today. Modern Israeli Hebrew uses the same script as the Hebrew Bible.",
-    countries: [{ flag: "🇮🇱", name: "Israel" }],
+    countries: [{ flag: "🇮🇱", name: "Israel", code: "ISR" }],
     mapBbox: "33.5,29.0,36.5,33.5"
   },
   {
@@ -446,7 +508,11 @@ const SCRIPTS = [
       "أهلا وسهلا في بلدنا",
       "ممنوع التدخين في المبنى",
       "عمّان عاصمة المملكة الأردنية",
-      "القاهرة مدينة الألف مئذنة"
+      "القاهرة مدينة الألف مئذنة",
+      "أحب اللغة العربية كثيرا",
+      "البحر الأحمر جميل جدا في الصيف",
+      "السوق مفتوح يوم الجمعة بعد الصلاة",
+      "الفطور هو أهم وجبة في اليوم"
     ],
     fonts: ["Noto Sans Arabic", "Noto Serif Arabic", "Cairo", "Tajawal", "Amiri"],
     tips: [
@@ -457,10 +523,10 @@ const SCRIPTS = [
     ],
     history: "Developed from Nabataean Aramaic in the 4th–5th century AD. Spread rapidly with the rise of Islam from the 7th century onward. The cursive connected style is itself a major Islamic art form — Arabic calligraphy carries religious significance, which is why even modern signage retains the flowing aesthetic rather than adopting blockier forms.",
     countries: [
-      { flag: "🇪🇬", name: "Egypt" },
-      { flag: "🇯🇴", name: "Jordan" },
-      { flag: "🇦🇪", name: "UAE" },
-      { flag: "🇱🇧", name: "Lebanon" }
+      { flag: "🇪🇬", name: "Egypt", code: "EGY" },
+      { flag: "🇯🇴", name: "Jordan", code: "JOR" },
+      { flag: "🇦🇪", name: "UAE", code: "ARE" },
+      { flag: "🇱🇧", name: "Lebanon", code: "LBN" }
     ],
     mapBbox: "25.0,12.0,57.0,38.0"
   }
