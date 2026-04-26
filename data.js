@@ -206,6 +206,7 @@ const SCRIPTS = [
     fonts: ["Noto Sans Myanmar", "Noto Serif Myanmar", "Padauk"],
     tips: [
       "Almost entirely circles and C-shapes — like a row of soap bubbles or Cheerios.",
+      "Big C that looks like it is surrounding another letter — distinctive Burmese silhouette.",
       "Very few straight lines anywhere. If you see angular strokes, it's NOT Burmese.",
       "vs Thai/Lao/Khmer: those have angular consonants too. Burmese has none — that's the cleanest single tell in the SE Asian family.",
       "Real-world: rare in GeoGuessr (limited Street View coverage of Myanmar)."
