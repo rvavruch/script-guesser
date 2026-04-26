@@ -46,7 +46,7 @@ const SCRIPTS = [
       "이번 주말에 부산으로 여행을 갈 거예요",
       "한강에서 자전거를 타면 정말 시원합니다"
     ],
-    fonts: ["Noto Sans KR", "Noto Serif KR", "Nanum Pen Script", "Black Han Sans"],
+    fonts: ["Noto Sans KR", "Noto Serif KR", "Nanum Pen Script", "Black Han Sans", "Gaegu", "Hahmlet", "Gowun Dodum"],
     tips: [
       "Square syllable blocks with circles (ㅇ) and squares — very geometric and modular.",
       "Each block packs 2–4 jamo (letter parts) into a roughly square shape, like a tiny grid.",
@@ -76,7 +76,7 @@ const SCRIPTS = [
       "美味しい和食を食べに行きましょう",
       "電車は十分後に到着いたします"
     ],
-    fonts: ["Noto Sans JP", "Noto Serif JP", "Sawarabi Mincho", "Yusei Magic"],
+    fonts: ["Noto Sans JP", "Noto Serif JP", "Sawarabi Mincho", "Yusei Magic", "M PLUS Rounded 1c", "Shippori Mincho", "Klee One"],
     tips: [
       "Three scripts at once — Kanji (complex), Hiragana (curly の), Katakana (angular ナ).",
       "If you see all three together, it's Japan. The signature swirly の almost always appears.",
@@ -107,7 +107,7 @@ const SCRIPTS = [
       "請問最近的捷運站怎麼走",
       "故宮博物院收藏了許多珍貴文物"
     ],
-    fonts: ["Noto Sans TC", "Noto Serif TC", "ZCOOL XiaoWei", "Long Cang"],
+    fonts: ["Noto Sans TC", "Noto Serif TC", "ZCOOL XiaoWei", "Long Cang", "Noto Sans HK", "Ma Shan Zheng"],
     tips: [
       "Dense, uniform Han characters — no circles like Korean, no curly kana like Japanese.",
       "Traditional has many strokes packed in (灣, 龜, 體) compared to Simplified's reduced forms (湾, 龟, 体).",
@@ -141,7 +141,7 @@ const SCRIPTS = [
       "ผมชอบกินก๋วยเตี๋ยวต้มยำกุ้ง",
       "ขอข้าวเหนียวมะม่วงหนึ่งจานครับ"
     ],
-    fonts: ["Noto Sans Thai", "Noto Serif Thai", "Sarabun", "Prompt"],
+    fonts: ["Noto Sans Thai", "Noto Serif Thai", "Sarabun", "Prompt", "Kanit", "Mali", "IBM Plex Sans Thai"],
     tips: [
       "Tone marks above the line (◌่ ◌้ ◌๊ ◌๋) are almost always present — Thai is heavily tonal and these survive in any Thai font.",
       "Two font styles in real life: looped (Sarabun, traditional — tiny terminal head-loop on every consonant) and loopless (Prompt, Kanit, modern — clean opens). Both appear on Thai signage; the loops disappear in modern fonts.",
@@ -172,7 +172,7 @@ const SCRIPTS = [
       "ຂ້ອຍ ມັກກິນເຂົ້າຂົ້ວ",
       "ພາສາລາວ ງ່າຍສຳລັບຊາວລາວ"
     ],
-    fonts: ["Noto Sans Lao", "Noto Serif Lao"],
+    fonts: ["Noto Sans Lao", "Noto Serif Lao", "Noto Sans Lao Looped"],
     tips: [
       "Bubbly/rounded — like a softer, simpler Thai. Notice closed circles INSIDE letters (ມ ບ ດ have round bowls).",
       "Fewer letters than Thai (27 vs 44), so a Lao phrase shows less shape variety.",
@@ -202,7 +202,7 @@ const SCRIPTS = [
       "បាយឆា ជាអាហារពេញនិយម",
       "ភាសាខ្មែរ មានអក្សរច្រើន"
     ],
-    fonts: ["Noto Sans Khmer", "Noto Serif Khmer", "Battambang", "Moul"],
+    fonts: ["Noto Sans Khmer", "Noto Serif Khmer", "Battambang", "Moul", "Hanuman", "Koulen", "Bayon"],
     tips: [
       "Wavy crowns on top of many letters (ស ដ) — ornate, decorative.",
       "Subscript consonants hang below the baseline — text feels 'busy' both above AND below the line.",
@@ -261,7 +261,7 @@ const SCRIPTS = [
       "मेरा नाम राजेश है, मैं दिल्ली से हूँ",
       "बॉलीवुड फिल्में दुनिया भर में लोकप्रिय हैं"
     ],
-    fonts: ["Noto Sans Devanagari", "Noto Serif Devanagari", "Hind", "Mukta"],
+    fonts: ["Noto Sans Devanagari", "Noto Serif Devanagari", "Hind", "Mukta", "Tiro Devanagari Hindi", "Kalam", "Yatra One"],
     tips: [
       "Continuous horizontal headstroke (shirorekha) along the top of words — नमस्ते.",
       "Letters hang from the headstroke like clothes on a line. Blocky, upright shapes below.",
@@ -293,7 +293,7 @@ const SCRIPTS = [
       "દિવાળી અમારો સૌથી મોટો તહેવાર",
       "મુંબઈ થી અમદાવાદ ની ટ્રેન"
     ],
-    fonts: ["Noto Sans Gujarati", "Noto Serif Gujarati", "Hind Vadodara", "Mukta Vaani"],
+    fonts: ["Noto Sans Gujarati", "Noto Serif Gujarati", "Hind Vadodara", "Mukta Vaani", "Anek Gujarati"],
     tips: [
       "Looks like Devanagari but with NO headstroke. \"Broken clothesline\".",
       "Letters round at the top instead of being capped flat — curvier than Devanagari.",
@@ -322,7 +322,7 @@ const SCRIPTS = [
       "హైదరాబాద్ బిర్యానీ ప్రసిద్ధం",
       "తెలుగు భాష చాలా అందమైనది"
     ],
-    fonts: ["Noto Sans Telugu", "Noto Serif Telugu", "Hind Guntur", "Ramaraja"],
+    fonts: ["Noto Sans Telugu", "Noto Serif Telugu", "Hind Guntur", "Ramaraja", "Tiro Telugu", "Mallanna"],
     tips: [
       "Very rounded letters with a small \"check-mark\" or v-tick on top of nearly every character.",
       "Nothing angular — pure curves. Looks like 'O's wearing tiny party hats'.",
@@ -352,7 +352,7 @@ const SCRIPTS = [
       "நாங்கள் சாப்பாடு சாப்பிட்டோம்",
       "சென்னை மரினா பீச் மிக நீளமானது"
     ],
-    fonts: ["Noto Sans Tamil", "Noto Serif Tamil", "Hind Madurai", "Catamaran"],
+    fonts: ["Noto Sans Tamil", "Noto Serif Tamil", "Hind Madurai", "Catamaran", "Tiro Tamil", "Mukta Malar"],
     tips: [
       "Boxy/angular letterforms — square-looking, mechanical, no top features.",
       "Far fewer loops than other South Indian scripts — the most rectilinear of the family.",
@@ -388,7 +388,7 @@ const SCRIPTS = [
       "Cà phê sữa đá là thức uống truyền thống",
       "Lễ hội Tết Nguyên Đán quan trọng nhất trong năm"
     ],
-    fonts: ["Be Vietnam Pro", "Lora", "Roboto Slab", "Playfair Display"],
+    fonts: ["Be Vietnam Pro", "Lora", "Roboto Slab", "Playfair Display", "Anton", "Merriweather", "IBM Plex Sans"],
     tips: [
       "Latin alphabet + heavy diacritics: stacked accent marks (ồ, ắ, ễ, ự).",
       "If you see Latin text with multiple accents on the same vowel, it's Vietnamese.",
@@ -417,7 +417,7 @@ const SCRIPTS = [
       "বাংলা সাহিত্য অনেক সমৃদ্ধ",
       "আজ চা পান করতে চাও কি"
     ],
-    fonts: ["Noto Sans Bengali", "Noto Serif Bengali", "Hind Siliguri", "Galada"],
+    fonts: ["Noto Sans Bengali", "Noto Serif Bengali", "Hind Siliguri", "Galada", "Tiro Bangla", "Baloo Da 2"],
     tips: [
       "Headstroke like Devanagari, BUT with curvier, flame-shaped letterforms.",
       "Triangular wedges and hooks hang below the baseline — distinctive.",
@@ -450,7 +450,7 @@ const SCRIPTS = [
       "මම කොළඹ විශ්වවිද්‍යාලයේ ඉගෙන ගන්නවා",
       "අද රාත්‍රී ආහාරය මොකක්ද"
     ],
-    fonts: ["Noto Sans Sinhala", "Noto Serif Sinhala"],
+    fonts: ["Noto Sans Sinhala", "Noto Serif Sinhala", "Abhaya Libre", "Yaldevi", "Gemunu Libre"],
     tips: [
       "Loops, loops, loops — even more than Lao or Burmese. Many letters are double-looped.",
       "If it looks like Lao but somehow even rounder and more cursive, it's Sinhala.",
@@ -484,7 +484,7 @@ const SCRIPTS = [
       "המסעדה פתוחה משעה תשע בבוקר",
       "ילדים, היזהרו בדרך לבית הספר"
     ],
-    fonts: ["Noto Sans Hebrew", "Noto Serif Hebrew", "Frank Ruhl Libre", "Heebo"],
+    fonts: ["Noto Sans Hebrew", "Noto Serif Hebrew", "Frank Ruhl Libre", "Heebo", "Assistant", "David Libre"],
     tips: [
       "Square, blocky letters with strong horizontal tops — like little gates and hooks.",
       "Reads right-to-left. No ascenders or descenders — everything sits on one band.",
@@ -514,7 +514,7 @@ const SCRIPTS = [
       "السوق مفتوح يوم الجمعة بعد الصلاة",
       "الفطور هو أهم وجبة في اليوم"
     ],
-    fonts: ["Noto Sans Arabic", "Noto Serif Arabic", "Cairo", "Tajawal", "Amiri"],
+    fonts: ["Noto Sans Arabic", "Noto Serif Arabic", "Cairo", "Tajawal", "Amiri", "Reem Kufi", "Aref Ruqaa", "IBM Plex Sans Arabic"],
     tips: [
       "Flowing connected cursive, reads right-to-left — letters merge into each other.",
       "Lots of dots above and below the baseline — that's how letters are distinguished.",
