@@ -26,10 +26,25 @@ function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function buildChallenge() {
-  // Pick the script to be tested. (Caller decides which script via index into round.challenges.)
-  // This function only constructs a challenge object given a chosen correct script.
-  throw new Error("buildChallenge is built inline in startRound; do not call directly.");
+function fontFamilyRoot(name) {
+  // "Noto Sans KR" / "Noto Sans Tamil" → "Noto Sans" (cross-script counterpart match).
+  // "Noto Serif Hebrew" / "Noto Serif Devanagari" → "Noto Serif".
+  // Other fonts have no cross-script counterparts in the catalog, so return full name.
+  const parts = name.split(" ");
+  if (parts[0] === "Noto" && parts.length >= 2) return parts[0] + " " + parts[1];
+  return name;
+}
+
+function findCounterpartFont(originalFont, candidateFonts) {
+  const root = fontFamilyRoot(originalFont);
+  return candidateFonts.find((f) => fontFamilyRoot(f) === root) || null;
+}
+
+function findGuessedScript(ch) {
+  if (!ch.guess) return null;
+  return ch.mode === "name"
+    ? SCRIPTS.find((s) => s.name === ch.guess)
+    : SCRIPTS.find((s) => s.region === ch.guess);
 }
 
 function buildRound() {
@@ -128,6 +143,27 @@ function sampleStyle(ch) {
   return `font-family: '${ch.font}', sans-serif; font-weight: ${ch.weight}; font-style: ${ch.italic ? "italic" : "normal"}`;
 }
 
+function comparisonHtml(ch) {
+  if (ch.isCorrect) return "";
+  const guessed = findGuessedScript(ch);
+  if (!guessed) return "";
+
+  // Try to render the comparison in the same font family as the original (e.g.
+  // both as Noto Sans or both as Noto Serif). Fall back to a random font from
+  // the guessed script's list when no counterpart exists.
+  const compFont = findCounterpartFont(ch.font, guessed.fonts) || pick(guessed.fonts);
+  const compSample = pick(guessed.samples);
+  const compItalic = ch.italic && Boolean(guessed.latinScript);
+  const style = `font-family: '${compFont}', sans-serif; font-weight: ${ch.weight}; font-style: ${compItalic ? "italic" : "normal"}`;
+
+  return `
+    <div class="comparison">
+      <div class="prompt">For comparison — ${escapeHtml(guessed.name)} (${escapeHtml(guessed.region)}):</div>
+      <div class="sample comparison-sample" dir="auto" style="${style}">${escapeHtml(compSample)}</div>
+    </div>
+  `;
+}
+
 function renderChallenge() {
   renderStatus();
   const ch = round.challenges[round.index];
@@ -186,6 +222,7 @@ function renderFeedback() {
     <div class="feedback ${ch.isCorrect ? "correct" : "wrong"}">
       <h3>${ch.isCorrect ? "Correct!" : "Not quite."}</h3>
       <div>That was <strong>${escapeHtml(ch.correct.name)}</strong> — ${escapeHtml(ch.correct.region)}.</div>
+      ${comparisonHtml(ch)}
       <ul>${tipsHtml}</ul>
     </div>
     <div class="actions">
