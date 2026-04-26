@@ -108,20 +108,26 @@ async function renderMap(elementId, ch) {
     maxZoom: 8
   }).addTo(map);
 
+  // Cap auto-zoom so small countries (Sri Lanka, Singapore, Israel) still show
+  // surrounding regional context — useful for GeoGuessr orientation. Large
+  // multi-country spans (Hindi belt + Nepal, Arabic across MENA) need wider
+  // views than this anyway, so the cap rarely engages there.
+  const fitOpts = { padding: [12, 12], maxZoom: 4 };
+
   if (features.length > 0) {
     const layer = L.geoJSON(
       { type: "FeatureCollection", features },
       { style: { color: "#3ddc97", weight: 2, fillColor: "#3ddc97", fillOpacity: 0.35 } }
     ).addTo(map);
     try {
-      map.fitBounds(layer.getBounds(), { padding: [12, 12] });
+      map.fitBounds(layer.getBounds(), fitOpts);
     } catch (_e) {
       const [minLon, minLat, maxLon, maxLat] = ch.correct.mapBbox.split(",").map(Number);
-      map.fitBounds([[minLat, minLon], [maxLat, maxLon]]);
+      map.fitBounds([[minLat, minLon], [maxLat, maxLon]], fitOpts);
     }
   } else {
     const [minLon, minLat, maxLon, maxLat] = ch.correct.mapBbox.split(",").map(Number);
-    map.fitBounds([[minLat, minLon], [maxLat, maxLon]]);
+    map.fitBounds([[minLat, minLon], [maxLat, maxLon]], fitOpts);
   }
 
   _currentMap = map;
